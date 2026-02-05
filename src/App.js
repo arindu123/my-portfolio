@@ -14,7 +14,8 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (e, id) => {
+    e.preventDefault(); // මෙය ඉතා වැදගත්: පිටුව reload වීම වළක්වයි
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
   };
@@ -29,11 +30,12 @@ const Header = () => {
           <span></span>
         </button>
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
-          <a onClick={() => scrollToSection('home')}>Home</a>
-          <a onClick={() => scrollToSection('about')}>About</a>
-          <a onClick={() => scrollToSection('skills')}>Skills</a>
-          <a onClick={() => scrollToSection('projects')}>Projects</a>
-          <a onClick={() => scrollToSection('contact')}>Contact</a>
+          {/* මෙහි href="#" සහ e.preventDefault() මගින් Netlify error එක ඉවත් වේ */}
+          <a href="#home" onClick={(e) => scrollToSection(e, 'home')}>Home</a>
+          <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About</a>
+          <a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a>
+          <a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects</a>
+          <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a>
         </nav>
       </div>
     </header>
@@ -226,7 +228,7 @@ const Projects = () => {
       tech: ['HTML', 'CSS', 'PHP', 'MySQL'],
       period: 'Jul 2024 - Nov 2024',
       image: '/images/home.png',
-      github: 'https://github.com/yourusername/autohub',
+      github: 'https://github.com/arindu123/Autohub.git',
       demo: 'https://autohub-demo.com'
     },
     {
@@ -235,7 +237,7 @@ const Projects = () => {
       tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js'],
       period: 'Feb 2025 - Nov 2025',
       image: '/images/event.jpeg',
-      github: 'https://github.com/yourusername/event-planning',
+      github: 'https://github.com/arindu123/Online-Event-Planning-System.git',
       demo: 'https://event-demo.com'
     },
     {
@@ -244,7 +246,7 @@ const Projects = () => {
       tech: ['Kotlin', 'Android Studio', 'Firebase'],
       period: 'Jul 2025 - Oct 2025',
       image: '/images/splash.png',
-      github: 'https://github.com/yourusername/feast-of-kings'
+      github: 'https://github.com/arindu123/FeastOfkings.git'
     },
     {
       title: 'HabitWave',
@@ -252,7 +254,7 @@ const Projects = () => {
       tech: ['Kotlin', 'Android Studio', 'SQLite'],
       period: 'Jul 2025 - Oct 2025',
       image: '/images/habit.jpeg',
-      github: 'https://github.com/yourusername/habitwave'
+      github: 'https://github.com/arindu123/HabitVave.git'
     },
     {
       title: 'Smart Horana Urban Council System',
@@ -260,7 +262,7 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'MongoDB', 'Express'],
       period: 'Jul 2025 - Oct 2025',
       image: '/images/horana.jpeg',
-      github: 'https://github.com/yourusername/habitwave'
+      github: 'https://github.com/arindu123/Horana-urban-council-project-1-.git'
     }
   ];
 
@@ -376,7 +378,7 @@ const Contact = () => {
             <p>+94 77 425 4139</p>
           </a>
           
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="contact-card">
+          <a href="https://github.com/arindu123" target="_blank" rel="noopener noreferrer" className="contact-card">
             <div className="contact-card-glow"></div>
             <div className="contact-icon">💻</div>
             <h3>GitHub</h3>
