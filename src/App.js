@@ -15,8 +15,11 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (e, id) => {
-    e.preventDefault(); // මෙය ඉතා වැදගත්: පිටුව reload වීම වළක්වයි
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    e.preventDefault(); // Prevents page reload
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
     setMenuOpen(false);
   };
 
@@ -24,13 +27,17 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <h1 className="logo">AS</h1>
-        <button className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+        <button 
+          className={`menu-toggle ${menuOpen ? 'open' : ''}`} 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
-          {/* මෙහි href="#" සහ e.preventDefault() මගින් Netlify error එක ඉවත් වේ */}
+          {/* Added hrefs to all links to satisfy ESLint/Netlify requirements */}
           <a href="#home" onClick={(e) => scrollToSection(e, 'home')}>Home</a>
           <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About</a>
           <a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a>
@@ -80,13 +87,13 @@ const Hero = () => {
             </p>
             <div className="hero-buttons">
               <button 
-                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })} 
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} 
                 className="btn-primary"
               >
                 View Projects
               </button>
               <button 
-                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })} 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} 
                 className="btn-secondary"
               >
                 Contact Me
@@ -403,7 +410,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
-          <p>&copy; 2025 Arindu Semal Amarajeewa. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Arindu Semal Amarajeewa. All rights reserved.</p>
           <p>Built with React ❤️</p>
         </div>
       </div>
