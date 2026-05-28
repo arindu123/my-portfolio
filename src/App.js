@@ -194,10 +194,10 @@ const About = () => {
 // Skills Component
 const Skills = () => {
   const skills = {
-    'Programming Languages': ['Java', 'C', 'C++', 'PHP', 'JavaScript', 'Kotlin'],
-    'Frontend Development': ['HTML5', 'CSS3', 'React.js', 'WordPress'],
-    'Backend Development': ['Node.js', 'Express.js', 'Java Servlets', 'JSP', 'Apache Tomcat'],
-    'Database': ['MySQL', 'MongoDB'],
+    'Programming Languages': ['Java', 'C', 'C++', 'PHP', 'JavaScript', 'TypeScript', 'Kotlin'],
+    'Frontend Development': ['HTML5', 'CSS3', 'React.js', 'Next.js', 'Tailwind CSS', 'WordPress'],
+    'Backend Development': ['T3 Stack', 'Node.js', 'Express.js', 'tRPC', 'Prisma', 'Java Servlets', 'JSP', 'Apache Tomcat'],
+    'Database': ['PostgreSQL', 'MySQL', 'MongoDB', 'SQLite'],
     'Tools & Technologies': ['Git', 'GitHub', 'Postman', 'VS Code', 'Eclipse', 'Android Studio']
   };
 
@@ -229,6 +229,15 @@ const Skills = () => {
 // Projects Component
 const Projects = () => {
   const projects = [
+    {
+      title: 'UniConnect',
+      description: 'A T3 Stack student networking platform for learning, resource sharing, collaboration, campus services, A/L result checking, events, buy & sell, renting, and lost & found workflows.',
+      tech: ['T3 Stack', 'Next.js', 'TypeScript', 'PostgreSQL'],
+      period: '2026',
+      image: '/images/uniconnect.svg',
+      github: 'https://github.com/arindu123/uniconnect.git',
+      demo: 'https://www.uniconnect.website'
+    },
     {
       title: 'Auto Hub',
       description: 'A comprehensive vehicle advertisement website built with PHP and MySQL, enabling users to browse, post, and manage vehicle listings efficiently with advanced search and filtering capabilities.',
@@ -359,8 +368,8 @@ const Contact = () => {
 
         <div className="cv-download">
           <a 
-            href="/Semal_Amarajeewa_CV.pdf" 
-            download="Semal_Amarajeewa_CV.pdf"
+            href="/Resume_Semal_Amarajeewa.pdf" 
+            download="Resume_Semal_Amarajeewa.pdf"
             className="btn-download"
           >
             <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
