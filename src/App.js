@@ -196,7 +196,7 @@ const Skills = () => {
   const skills = {
     'Programming Languages': ['Java', 'C', 'C++', 'PHP', 'JavaScript', 'TypeScript', 'Kotlin'],
     'Frontend Development': ['HTML5', 'CSS3', 'React.js', 'Next.js', 'Tailwind CSS', 'WordPress'],
-    'Backend Development': ['T3 Stack', 'Node.js', 'Express.js', 'tRPC', 'Prisma', 'Java Servlets', 'JSP', 'Apache Tomcat'],
+    'Backend Development': ['T3 Stack', 'Spring Boot', 'REST API', 'Node.js', 'Express.js', 'tRPC', 'Prisma', 'Java Servlets', 'JSP', 'Apache Tomcat'],
     'Database': ['PostgreSQL', 'MySQL', 'MongoDB', 'SQLite'],
     'Tools & Technologies': ['Git', 'GitHub', 'Postman', 'VS Code', 'Eclipse', 'Android Studio']
   };
@@ -237,6 +237,14 @@ const Projects = () => {
       image: '/images/uniconnect.svg',
       github: 'https://github.com/arindu123/uniconnect.git',
       demo: 'https://www.uniconnect.website'
+    },
+    {
+      title: 'Smart Campus',
+      description: 'A smart campus platform developed for the IT3030 PAF module, supporting campus services and student-focused digital workflows with a Spring Boot backend.',
+      tech: ['React', 'Spring Boot', 'Java', 'REST API'],
+      period: '2026',
+      image: '/images/smart-campus.svg',
+      github: 'https://github.com/arindu123/it3030-paf-2026-smart-campus-group59.git'
     },
     {
       title: 'Auto Hub',
@@ -401,7 +409,7 @@ const Contact = () => {
             <p>View my work</p>
           </a>
           
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="contact-card">
+          <a href="https://www.linkedin.com/in/semal-amarajeewa-4157a2358?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" className="contact-card">
             <div className="contact-card-glow"></div>
             <div className="contact-icon">💼</div>
             <h3>LinkedIn</h3>
